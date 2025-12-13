@@ -16,7 +16,7 @@ class ScrapeRentals extends Command
     {
         $this->info('Démarrage du scraping...');
         
-        // 1. Charger la source locale
+        
         $filePath =  resource_path('sources/fake_rentals.html');
 
         if (!file_exists($filePath)) {
