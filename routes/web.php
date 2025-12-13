@@ -12,23 +12,23 @@ Route::get('/rentals', [RentalSourceController::class, 'index'])->name('rentals.
 
 
 
-// je les ai commentées pour éviter des exécutions accidentelles, parce que c'etait juste pour que les migrations et le scraper puissent être lancés via des routes web pendant le développement.
+// routes pour le deploiement
 
-// Route::get('/run-migrations', function () {
-//     Artisan::call('migrate', ['--force' => true]);
-//     return 'Migrations exécutées.';
-// });
-
-
-// Route::get('/run-scraper', function () {
-//     Artisan::call('app:scrape-rentals');
-//     return nl2br(Artisan::output());
-// });
+Route::get('/run-migrations', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return 'Migrations exécutées.';
+});
 
 
-// Route::get('/clear', function () {
-//     \Artisan::call('config:clear');
-//     \Artisan::call('cache:clear');
-//     return 'cleared';
-// });
+Route::get('/run-scraper', function () {
+    Artisan::call('app:scrape-rentals');
+    return nl2br(Artisan::output());
+});
+
+
+Route::get('/clear', function () {
+    \Artisan::call('config:clear');
+    \Artisan::call('cache:clear');
+    return 'cleared';
+});
 
