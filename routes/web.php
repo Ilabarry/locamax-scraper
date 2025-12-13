@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RentalSourceController;
-// use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Artisan;
 
 
 Route::get('/', [RentalSourceController::class, 'index']);
