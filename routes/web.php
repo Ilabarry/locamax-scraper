@@ -25,6 +25,16 @@ Route::get('/run-scraper', function () {
     return nl2br(Artisan::output());
 });
 
+Route::get('/test-db', function () {
+    try {
+        \DB::connection()->getPdo();
+        return 'DB OK';
+    } catch (\Exception $e) {
+        return $e->getMessage();
+    }
+});
+
+
 
 Route::get('/clear', function () {
     \Artisan::call('config:clear');
