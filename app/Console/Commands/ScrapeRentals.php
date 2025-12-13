@@ -17,7 +17,7 @@ class ScrapeRentals extends Command
         $this->info('Démarrage du scraping...');
         
         // 1. Charger la source locale
-        $filePath = storage_path('app/sources/fake_rentals.html');
+        $filePath =  resource_path('sources/fake_rentals.html');
 
         if (!file_exists($filePath)) {
             $this->error("Fichier introuvable : $filePath");
