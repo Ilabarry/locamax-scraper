@@ -23,3 +23,9 @@ Route::get('/run-scraper', function () {
     return 'Scraper exécuté.';
 });
 
+Route::get('/clear', function () {
+    \Artisan::call('config:clear');
+    \Artisan::call('cache:clear');
+    return 'cleared';
+});
+
