@@ -18,10 +18,12 @@ Route::get('/run-migrations', function () {
     return 'Migrations exécutées.';
 });
 
+
 Route::get('/run-scraper', function () {
     Artisan::call('app:scrape-rentals');
-    return 'Scraper exécuté.';
+    return nl2br(Artisan::output());
 });
+
 
 Route::get('/clear', function () {
     \Artisan::call('config:clear');
